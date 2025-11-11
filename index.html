@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shine Sherwanis — Rent & Buy Premium Sherwanis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Small custom styles for loader & QR scanner line */
+    .loader-ring {
+      width: 80px;
+      height: 80px;
+      border: 8px solid rgba(0,0,0,0.08);
+      border-top-color: #f59e0b; /* gold-ish */
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* QR scanner line animation */
+    .scan-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(245,158,11,0), rgba(245,158,11,0.9), rgba(245,158,11,0));
+      animation: scan 2s linear infinite;
+    }
+    @keyframes scan {
+      0% { top: 0%; }
+      50% { top: 85%; }
+      100% { top: 0%; }
+    }
+  </style>
+</head>
+<body class="bg-white text-black antialiased">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 w-full bg-white/60 backdrop-blur z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold">SJ</div>
+        <div>
+          <h1 class="font-bold text-xl">Shine Sherwanis</h1>
+          <p class="text-xs text-gray-600 -mt-1">Premium Rent & Buy</p>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6 font-medium">
+        <a href="#products" class="hover:text-yellow-600">Products</a>
+        <a href="#banners" class="hover:text-yellow-600">Banners</a>
+        <a href="#about" class="hover:text-yellow-600">About</a>
+        <a href="#contact" class="hover:text-yellow-600">Contact</a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white/95 shadow">
+    <div class="px-4 py-4 flex flex-col gap-3">
+      <a href="#products">Products</a>
+      <a href="#banners">Banners</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- HERO (Big banner) -->
+  <section id="home" class="mt-[70px]">
+    <img src="https://sensoethnic.com/images/slider/banner4.jpg" 
+         alt="Shoes Banner" 
+         class="w-full h-[240px] md:h-[610px] object-cover object-center">
+  </section>
+
+  <header class="mt-20">
+  <section class="relative flex items-center justify-center">
+    <!-- Overlay -->
+    <div class="absolute inset-0 "></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 sm:px-6 md:px-10 max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text- drop-shadow-lg leading-tight">
+        Shine Sherwanis — Shaadi Ka Royal Look
+      </h2>
+      <p class="mt-4 text-gray-400 text-sm sm:text-base md:text-lg">
+        Rent ya Buy premium sherwanis — handcrafted details, luxurious fabrics. Reserve a fitting aaj hi.
+      </p>
+
+      <div class="mt-6 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+        <a href="#products"
+          class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-yellow-400 transition">
+          Dekho Collection
+        </a>
+        <a href="#contact"
+          class="border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white/10 transition">
+          Contact
+        </a>
+      </div>
+    </div>
+  </section>
+</header>
+
+
+  <!-- ✅ Responsive Double Banner Section -->
+<section id="banners" class="mt-10 px-2 md:px-6">
+  <div class="flex flex-col md:flex-row gap-4 md:gap-6">
+    
+    <!-- First Banner -->
+    <img src="https://cdn0.weddingwire.in/article/7796/3_2/1280/jpg/46977-black-sherwani-rohit-bal-lead.jpeg"
+         alt="banner1"
+         class="w-full md:w-1/2 h-50 md:h-75 object-cover rounded-xl shadow-lg  transition-transform duration-500">
+
+    <!-- Second Banner -->
+    <img src="https://vjvnow.com/cdn/shop/articles/top-trendy-indian-wedding-suits-for-men-s-2024-vjv-now.jpg?v=1721129512"
+         alt="banner2"
+         class="w-full md:w-1/2 h-50 md:h-75 object-cover rounded-xl shadow-lg  transition-transform duration-500">
+
+  </div>
+</section>
+
+
+  <!-- PRODUCTS GRID -->
+  <section id="products" class="max-w-7xl mx-auto px-4 py-8">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold">Premium Sherwanis</h2>
+      <!-- <p class="text-sm text-gray-600">Mobile pe 2 columns · Desktop pe grid</p> -->
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- PRODUCT CARD (repeat) -->
+      <!-- Card 1 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-2xl overflow-hidden">
+        <img src="https://www.rajwadi.com/media/catalog/product/cache/8eabcfe0bc803a7a0c799eb5e21ee122/g/r/graceful-beige-heavy-embroidered-groom-sherwani-set-59169.jpg" alt="Royal Sherwani" class="w-full h-[240px] md:h-[350px] object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold">RoyalEmbroidered Sherwani</h3>
+          <p class="text-yellow-600 font-bold mt-2">₹4,999 / Rent</p>
+          <p class="text-gray-500 text-sm ">Buy ₹19,999</p>
+
+          <div class="mt-4 flex gap-3">
+            <button onclick="openOrderModal('Royal Embroidered Sherwani', 'rent', 4999, 'https://www.rajwadi.com/media/catalog/product/cache/8eabcfe0bc803a7a0c799eb5e21ee122/g/r/graceful-beige-heavy-embroidered-groom-sherwani-set-59169.jpg')"
+                    class="flex-1 bg-black text-white px-3 py-2 rounded-md text-sm">Rent</button>
+
+            <button onclick="openOrderModal('Royal Embroidered Sherwani', 'buy', 19999, 'https://www.rajwadi.com/media/catalog/product/cache/8eabcfe0bc803a7a0c799eb5e21ee122/g/r/graceful-beige-heavy-embroidered-groom-sherwani-set-59169.jpg')"
+                    class="flex-1 border border-yellow-500 text-yellow-600 px-3 py-2 rounded-md text-sm">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-2xl overflow-hidden">
+        <img src="https://shreeman.in/cdn/shop/products/1J8A0116.jpg?v=1667304210" alt="Classic Sherwani" class="w-full  h-[240px] md:h-[350px] object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold">Classic Zari  Work Sherwani</h3>
+          <p class="text-yellow-600 font-bold mt-2">₹3,499 / Rent</p>
+          <p class="text-gray-500 text-sm line-through">Buy ₹14,999</p>
+
+          <div class="mt-4 flex gap-3">
+            <button onclick="openOrderModal('Classic Zari Work Sherwani', 'rent', 3499, 'https://images.unsplash.com/photo-1544367567-0f2fcb009e2b?auto=format&fit=crop&w=800&q=80')"
+                    class="flex-1 bg-black text-white px-3 py-2 rounded-md text-sm">Rent</button>
+
+            <button onclick="openOrderModal('Classic Zari Work Sherwani', 'buy', 14999, 'https://images.unsplash.com/photo-1544367567-0f2fcb009e2b?auto=format&fit=crop&w=800&q=80')"
+                    class="flex-1 border border-yellow-500 text-yellow-600 px-3 py-2 rounded-md text-sm">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-2xl overflow-hidden">
+        <img src="https://www.riccoindia.com/cdn/shop/products/image_4ee80090-8a87-47ee-bb67-0d57d6697c77_1024x1024.jpg?v=1601260073" alt="Designer Sherwani" class="w-full h-[240px] md:h-[350px] object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold">Designer Velvet Sherwani</h3>
+          <p class="text-yellow-600 font-bold mt-2">₹6,999 / Rent</p>
+          <p class="text-gray-500 text-sm line-through">Buy ₹25,999</p>
+
+          <div class="mt-4 flex gap-3">
+            <button onclick="openOrderModal('Designer Velvet Sherwani', 'rent', 6999, 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80')"
+                    class="flex-1 bg-black text-white px-3 py-2 rounded-md text-sm">Rent</button>
+
+            <button onclick="openOrderModal('Designer Velvet Sherwani', 'buy', 25999, 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80')"
+                    class="flex-1 border border-yellow-500 text-yellow-600 px-3 py-2 rounded-md text-sm">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-2xl overflow-hidden">
+        <img src="https://www.shoppingworldyt.com/cdn/shop/files/8255B63C-F201-4409-A6B2-6FCD176D24A4.jpg?v=1734463553&width=1946" alt="Royal Maroon Sherwani" class="w-full h-[240px] md:h-[350px] object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold">Royal Maroon Sherwani</h3>
+          <p class="text-yellow-600 font-bold mt-2">₹5,499 / Rent</p>
+          <p class="text-gray-500 text-sm line-through">Buy ₹21,999</p>
+
+          <div class="mt-4 flex gap-3">
+            <button onclick="openOrderModal('Royal Maroon Sherwani', 'rent', 5499, 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80')"
+                    class="flex-1 bg-black text-white px-3 py-2 rounded-md text-sm">Rent</button>
+
+            <button onclick="openOrderModal('Royal Maroon Sherwani', 'buy', 21999, 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80')"
+                    class="flex-1 border border-yellow-500 text-yellow-600 px-3 py-2 rounded-md text-sm">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more cards as needed... -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="max-w-5xl mx-auto px-4 py-10">
+    <h3 class="text-2xl font-bold mb-3">About Shine Sherwanis</h3>
+    <p class="text-gray-700 leading-relaxed">Shine Sherwanis offers premium wedding attire for grooms & close family. Rent high-end designer sherwanis for weddings, sangeet, and receptions — ya permanently buy your favourite piece. Hum quality, fit aur finishing pe bahut dhyan rakhte hain.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-gray-50 py-10">
+    <div class="max-w-4xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-4">Contact / Book a Fitting</h3>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" placeholder="Your Name" class="p-3 border rounded" />
+        <input type="tel" placeholder="Phone" class="p-3 border rounded" />
+        <input type="email" placeholder="Email" class="p-3 border rounded" />
+        <input type="text" placeholder="Event Date (e.g. 2025-12-01)" class="p-3 border rounded" />
+      </form>
+      <div class="mt-4">
+        <button class="bg-black text-white px-6 py-3 rounded" onclick="alert('Thank you! We will contact you soon.')">Request Callback</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-6 mt-8">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>© 2025 Shine Sherwanis — Rent & Buy · All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- ORDER MODAL (FORM) -->
+  <div id="orderModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-60">
+    <div class="bg-white rounded-2xl max-w-xl w-full mx-4 p-6 relative shadow-2xl">
+      <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-500">✕</button>
+
+      <div class="flex gap-4">
+        <img id="modalProductImg" src="" alt="" class="w-32 h-32 object-cover rounded-lg shadow" />
+        <div class="flex-1">
+          <h4 id="modalProductTitle" class="font-bold text-lg">Product</h4>
+          <p id="modalProductMode" class="text-sm text-gray-600">Mode</p>
+          <p id="modalProductPrice" class="text-yellow-600 font-bold mt-1">₹0</p>
+        </div>
+      </div>
+
+      <form id="orderForm" class="mt-4 grid gap-3">
+        <input type="text" id="custName" placeholder="Full Name *" class="p-3 border rounded" required />
+        <input type="tel" id="custPhone" placeholder="Phone *" class="p-3 border rounded" required />
+       
+
+        <!-- dynamic rental dates if mode == rent -->
+        <div id="rentalFields" class="hidden grid grid-cols-2 gap-3">
+          <input type="date" id="rentFrom" class="p-3 border rounded" />
+          <input type="date" id="rentTo" class="p-3 border rounded" />
+        </div>
+
+        <textarea id="custAddr" placeholder="Address (for delivery/pickup)" class="p-3 border rounded"></textarea>
+
+        <div class="flex gap-3 mt-2">
+          <button type="button" onclick="submitOrder()" class="flex-1 bg-yellow-500 text-black px-4 py-3 rounded font-semibold">Proceed to Pay</button>
+          <button type="button" onclick="closeOrderModal()" class="flex-1 border rounded px-4 py-3">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- PAYMENT MODAL (after loader) -->
+  <div id="paymentModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-70">
+    <div class="bg-white rounded-2xl max-w-md w-full mx-4 p-6 relative shadow-2xl">
+      <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-gray-500">✕</button>
+
+      <h3 class="font-bold text-xl mb-2">Pay via UPI</h3>
+      <p class="text-sm text-gray-600 mb-4">Scan the QR below using PhonePe / Google Pay / Paytm or copy the UPI ID.</p>
+
+      <div class="flex flex-col items-center gap-4">
+        <!-- QR box with scanning line -->
+        <div class="relative bg-gray-100 p-4 rounded-lg">
+          <!-- QR image (generated using API with UPI payload) -->
+          <img id="qrImage" src="" alt="UPI QR" class="w-48 h-48 object-contain" />
+          <div class="scan-line"></div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-sm text-gray-700">UPI ID</p>
+          <div class="flex items-center gap-2 mt-1">
+            <code id="upiId" class="px-3 py-2 bg-gray-100 rounded-md">merchant@upi</code>
+            <button class="px-3 py-2 border rounded" onclick="copyUpi()">Copy</button>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">After payment, click <span class="font-semibold">I have paid</span>.</p>
+        </div>
+
+        <div class="w-full flex gap-3 mt-2">
+          <button class="flex-1 bg-black text-white px-4 py-3 rounded" onclick="confirmPayment()">I have paid</button>
+          <button class="flex-1 border rounded px-4 py-3" onclick="closePaymentModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOADER MODAL (2 second timer) -->
+  <div id="loaderModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-65">
+    <div class="bg-white p-6 rounded-lg flex flex-col items-center gap-4">
+      <div class="loader-ring"></div>
+      <p class="text-gray-700">Preparing secure payment... please wait</p>
+    </div>
+  </div>
+
+  <script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Modal elements
+  const orderModal = document.getElementById('orderModal');
+  const paymentModal = document.getElementById('paymentModal');
+  const loaderModal = document.getElementById('loaderModal');
+
+  // Order modal fields
+  const modalProductImg = document.getElementById('modalProductImg');
+  const modalProductTitle = document.getElementById('modalProductTitle');
+  const modalProductMode = document.getElementById('modalProductMode');
+  const modalProductPrice = document.getElementById('modalProductPrice');
+  const rentalFields = document.getElementById('rentalFields');
+
+  // Payment fields
+  const qrImage = document.getElementById('qrImage');
+  const upiIdElem = document.getElementById('upiId');
+
+  // Current order info
+  let currentOrder = {};
+
+  function openOrderModal(title, mode, price, img) {
+    currentOrder = { title, mode, price, img };
+    modalProductImg.src = img;
+    modalProductTitle.innerText = title;
+    modalProductMode.innerText = mode === 'rent' ? 'Rent' : 'Buy';
+    modalProductPrice.innerText = '₹' + price;
+
+    if (mode === 'rent') {
+      rentalFields.classList.remove('hidden');
+    } else {
+      rentalFields.classList.add('hidden');
+    }
+    orderModal.classList.remove('hidden');
+    orderModal.classList.add('flex');
+  }
+
+  function closeOrderModal() {
+    orderModal.classList.add('hidden');
+    orderModal.classList.remove('flex');
+  }
+
+  function submitOrder() {
+    const name = document.getElementById('custName').value.trim();
+    const phone = document.getElementById('custPhone').value.trim();
+    const addr = document.getElementById('custAddr').value.trim();
+    const rentFrom = document.getElementById('rentFrom').value;
+    const rentTo = document.getElementById('rentTo').value;
+
+    if (!name || !phone) {
+      alert('Naam aur Phone bharna zaroori hai.');
+      return;
+    }
+
+    // ✅ Send Order Details to WhatsApp
+    const ownerNumber = "918000000000"; // <-- yahan apna WhatsApp number daal (91 ke sath)
+    let message = `🕴 *New Shine Sherwanis Order*\n\n`;
+    message += `👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n📦 *Product:* ${currentOrder.title}\n`;
+    message += `💰 *Mode:* ${currentOrder.mode === 'rent' ? 'Rent' : 'Buy'}\n`;
+    message += `💵 *Price:* ₹${currentOrder.price}\n`;
+    if (currentOrder.mode === 'rent' && rentFrom && rentTo) {
+      message += `🗓 *Rental Period:* ${rentFrom} → ${rentTo}\n`;
+    }
+    if (addr) message += `🏠 *Address:* ${addr}\n`;
+    message += `\n🔗 *Website:* https://shinesherwanis.in (demo link)`;
+
+    const encodedMsg = encodeURIComponent(message);
+    const wpUrl = `https://wa.me/${ownerNumber}?text=${encodedMsg}`;
+    window.open(wpUrl, '_blank');
+
+    // 🔄 Proceed to payment loader
+    closeOrderModal();
+    loaderModal.classList.remove('hidden');
+    loaderModal.classList.add('flex');
+
+    setTimeout(() => {
+      loaderModal.classList.add('hidden');
+      loaderModal.classList.remove('flex');
+
+      const upiId = 'shine.sherwanis@upi';
+      upiIdElem.innerText = upiId;
+
+      const amount = currentOrder.price || 0;
+      const upiDeep = encodeURIComponent(`upi://pay?pa=${upiId}&pn=Shine%20Sherwanis&am=${amount}`);
+      const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${upiDeep}`;
+      qrImage.src = qrUrl;
+
+      paymentModal.classList.remove('hidden');
+      paymentModal.classList.add('flex');
+    }, 2000);
+  }
+
+  function closePaymentModal() {
+    paymentModal.classList.add('hidden');
+    paymentModal.classList.remove('flex');
+  }
+
+  function copyUpi() {
+    const text = upiIdElem.innerText;
+    navigator.clipboard?.writeText(text).then(() => {
+      alert('UPI ID copied: ' + text);
+    }).catch(() => {
+      prompt('Copy this UPI ID', text);
+    });
+  }
+
+  function confirmPayment() {
+    alert('Payment received! Hum jaldi se order confirm kar denge. Dhanyavaad.');
+    closePaymentModal();
+  }
+
+  window.addEventListener('click', (e) => {
+    if (e.target === orderModal) closeOrderModal();
+    if (e.target === paymentModal) closePaymentModal();
+  });
+</script>
+
+
+</body>
+</html>
